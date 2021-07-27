@@ -108,6 +108,7 @@ locals {
   k8s_version_name = yamldecode(data.terraform_remote_state.global.outputs.k8s_version_name)
   clustername = yamldecode(data.terraform_remote_state.global.outputs.clustername)
   primary_dns = yamldecode(data.terraform_remote_state.global.outputs.primary_dns)
+  primary_ntp = yamldecode(data.terraform_remote_state.global.outputs.primary_ntp)
   timezone = yamldecode(data.terraform_remote_state.global.outputs.timezone)
   domain_name = yamldecode(data.terraform_remote_state.global.outputs.domain_name)
   ip_pool_policy = yamldecode(data.terraform_remote_state.global.outputs.ip_pool_policy)
