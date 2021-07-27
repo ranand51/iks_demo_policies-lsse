@@ -58,8 +58,7 @@ module "ip_pool_policy" {
   netmask          = local.netmask
   gateway          = local.gateway
   primary_dns      = local.primary_dns
-  primary_ntp      = local.primary_ntp
-
+  
   org_name = local.organization
 }
 
@@ -68,7 +67,7 @@ module "network" {
   #policy_name = "rtp-iks-cluster-01"
   policy_name = local.clustername
   dns_servers = [local.primary_dns]
-  ntp_servers = [local.primary_ntp]
+  ntp_servers = ["198.19.255.137"]
   timezone    = local.timezone
   domain_name = local.domain_name
   org_name    = local.organization
@@ -108,7 +107,6 @@ locals {
   k8s_version_name = yamldecode(data.terraform_remote_state.global.outputs.k8s_version_name)
   clustername = yamldecode(data.terraform_remote_state.global.outputs.clustername)
   primary_dns = yamldecode(data.terraform_remote_state.global.outputs.primary_dns)
-  primary_ntp = yamldecode(data.terraform_remote_state.global.outputs.primary_ntp)
   timezone = yamldecode(data.terraform_remote_state.global.outputs.timezone)
   domain_name = yamldecode(data.terraform_remote_state.global.outputs.domain_name)
   ip_pool_policy = yamldecode(data.terraform_remote_state.global.outputs.ip_pool_policy)
