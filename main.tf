@@ -26,7 +26,7 @@ variable "secretkey" {
 terraform {
   required_providers {
     intersight = {
-      source = "dCloud-DC-Practice/intersight"
+      source = "cisco-intersight-demo/intersight"
       version = "1.0.11"
     }
   }
