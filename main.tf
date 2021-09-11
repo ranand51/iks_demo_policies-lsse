@@ -40,6 +40,7 @@ provider "intersight" {
 
 module "infra_config_policy" {
   source           = "terraform-cisco-modules/iks/intersight//modules/infra_config_policy"
+  version          = "1.0.2"
   name             = local.infra_config_policy
   device_name      = local.device_name
   vc_portgroup     = [local.portgroup]
@@ -52,6 +53,7 @@ module "infra_config_policy" {
 
 module "ip_pool_policy" {
   source           = "terraform-cisco-modules/iks/intersight//modules/ip_pool"
+  version          = "1.0.2"
   name             = local.ip_pool_policy
   starting_address = local.starting_address
   pool_size        = local.pool_size
@@ -64,6 +66,7 @@ module "ip_pool_policy" {
 
 module "network" {
   source      = "terraform-cisco-modules/iks/intersight//modules/k8s_network"
+  version     = "1.0.2"
   #policy_name = "rtp-iks-cluster-01"
   policy_name = local.clustername
   dns_servers = local.primary_dns
@@ -75,6 +78,7 @@ module "network" {
 
 module "k8s_version" {
   source           = "terraform-cisco-modules/iks/intersight//modules/version"
+  version          = "1.0.2"
   k8s_version      = local.k8s_version
   k8s_version_name = local.k8s_version_name
 
