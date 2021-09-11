@@ -69,7 +69,7 @@ module "network" {
   version     = "1.0.2"
   #policy_name = "rtp-iks-cluster-01"
   policy_name = local.clustername
-  dns_servers = local.primary_dns
+  dns_servers = [local.primary_dns]
   ntp_servers = ["198.19.255.137"]
   timezone    = local.timezone
   domain_name = local.domain_name
