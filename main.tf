@@ -18,10 +18,10 @@ variable "api_key" {
   description = "API key for Intersight user"
 }
 
-variable "secretkey" {
-  type        = string
-  description = "Secret key for Intersight user"
-}
+# variable "secretkey" {
+#   type        = string
+#   description = "Secret key for Intersight user"
+# }
 
 terraform {
   required_providers {
