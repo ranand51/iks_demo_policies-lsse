@@ -27,7 +27,7 @@ terraform {
   required_providers {
     intersight = {
       source = "ciscodevnet/intersight"
-      version = "1.0.13"
+      version = "1.0.18"
     }
   }
 }
@@ -76,13 +76,23 @@ module "network" {
   org_name    = local.organization
 }
 
-module "k8s_version" {
-  source           = "terraform-cisco-modules/iks/intersight//modules/version"
-  version          = "1.0.2"
-  k8s_version      = local.k8s_version
-  k8s_version_name = local.k8s_version_name
+#module "k8s_version" {
+#  source           = "terraform-cisco-modules/iks/intersight//modules/version"
+#  version          = "1.0.2"
+#  k8s_version      = local.k8s_version
+#  k8s_version_name = local.k8s_version_name
 
+#  org_name = local.organization
+#}
+
+module "version_1-19-15-iks.5" {
+  source           = "terraform-cisco-modules/iks/intersight//modules/version"
+  version = "=2.1.2"
+  policyName     = local.k8s_version_name
+  # policyName     = "1.19.15-iks.5"
+  iksVersionName = "1.19.15-iks.5"
   org_name = local.organization
+#  tags     = var.tags
 }
 
 data "intersight_organization_organization" "organization" {
