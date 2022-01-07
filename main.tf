@@ -67,8 +67,8 @@ module "ip_pool_policy" {
 module "network" {
   source      = "terraform-cisco-modules/iks/intersight//modules/k8s_network"
   version     = "1.0.2"
-  policy_name = "rtp-iks-cluster"
-  #policy_name = local.clustername
+  #policy_name = "rtp-iks-cluster"
+  policy_name = local.clustername
   dns_servers = [local.primary_dns]
   ntp_servers = ["198.19.255.137"]
   timezone    = local.timezone
