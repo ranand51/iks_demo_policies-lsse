@@ -1,6 +1,6 @@
 #get the data fro the global vars WS
 data "terraform_remote_state" "global" {
-  backend = "s3"
+  backend = "remote"
   config = {
     organization = "CiscoCX_LSSE_Delivery"
     workspaces = {
