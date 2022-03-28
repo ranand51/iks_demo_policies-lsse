@@ -1,8 +1,8 @@
-#get the data fro the global vars WS
+u#get the data fro the global vars WS
 data "terraform_remote_state" "global" {
   backend = "remote"
   config = {
-    organization = "cisco-intersight-demo"
+    organization = "default"
     workspaces = {
       name = var.globalwsname
     }
