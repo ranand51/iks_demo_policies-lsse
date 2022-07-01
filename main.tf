@@ -2,7 +2,7 @@
 data "terraform_remote_state" "global" {
   backend = "remote"
   config = {
-    organization = "CiscoCX_LSSE_Delivery"
+    organization = "CiscoCX_LSSE_Learn"
     workspaces = {
       name = var.globalwsname
     }
