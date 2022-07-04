@@ -132,6 +132,8 @@ locals {
   device_name = yamldecode(data.terraform_remote_state.global.outputs.device_name)
   portgroup = yamldecode(data.terraform_remote_state.global.outputs.portgroup)
   password = yamldecode(data.terraform_remote_state.global.outputs.password)
+  netcfg_list = yamldecode(data.terraform_remote_state.global.outputs.network_pod)
+  syscfg_list = yamldecode(data.terraform_remote_state.global.outputs.network_service)
 #  portgroup = "VM Network"
   datastore = yamldecode(data.terraform_remote_state.global.outputs.datastore)
   vspherecluster = yamldecode(data.terraform_remote_state.global.outputs.vspherecluster)
