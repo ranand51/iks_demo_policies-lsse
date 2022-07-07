@@ -46,7 +46,7 @@ module "infra_config_policy" {
   vc_portgroup     = [local.portgroup]
   vc_datastore     = local.datastore
   vc_cluster       = local.vspherecluster
-  #vc_resource_pool = local.resource_pool
+  vc_resource_pool = local.resource_pool
   vc_password      = local.password
   org_name         = local.organization
 }
@@ -137,6 +137,6 @@ locals {
 #  portgroup = "VM Network"
   datastore = yamldecode(data.terraform_remote_state.global.outputs.datastore)
   vspherecluster = yamldecode(data.terraform_remote_state.global.outputs.vspherecluster)
-  #resource_pool = yamldecode(data.terraform_remote_state.global.outputs.resource_pool)
+  resource_pool = yamldecode(data.terraform_remote_state.global.outputs.resource_pool)
 
 }
